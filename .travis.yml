@@ -13,7 +13,7 @@ after_success:
   - docker image build -t mwiesbau/complex-nginx ./nginx
   - docker image build -t mwiesbau/complex-server ./server
   - docker image build -t mwiesbau/complex-worker ./worker
-  - echo "$DOCKER_PASSWORD" | docker login -u $"DOCKER_ID" --password-stdin
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   - docker image push mwiesbau/complex-client
   - docker image push mwiesbau/complex-nginx
   - docker image push mwiesbau/complex-server
